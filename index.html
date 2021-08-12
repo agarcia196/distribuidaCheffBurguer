@@ -11,10 +11,10 @@
     <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
-	<title>Burger Bar</title>
-	<meta name="author" content="Burger Bar" />
-	<meta name="description" content="Burger Bar Description" />
-	<meta name="keywords"  content="Burger Bar Keyword" />
+	<title>Cheff Burger</title>
+	<meta name="author" content="Cheff Burger" />
+	<meta name="description" content="Cheff Burger Description" />
+	<meta name="keywords"  content="Cheff Burger Keyword" />
   	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     
 
@@ -45,6 +45,7 @@
     <script type="text/javascript" src="js/less.min.js"></script>
     <script type="text/javascript" src="js/retina.min.js"></script>
 	<script type="text/javascript" src="js/modernizr.custom.71422.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -67,14 +68,14 @@
     <!-- The main page goes here -->
     <div id="container">
 
-        <!-- Logo, Company Name, and Slogan Area -->
+        <!-- Logo, Cheff Burger, and Slogan Area -->
         <div class="container">
             <div class="main-container row">
                 <div id="logo">
                     <a href="index.html">
                         <div class="logo-icon"><img src="img/logo.png" /></div>
-                        <div class="logo-type">Company Name</div>
-                        <div class="logo-slogan">slogan here</div> 
+                        <div class="logo-type">Cheff Burger</div>
+                        <div class="logo-slogan">Más caro, más riko</div> 
                     </a>
                 </div>
             </div>
@@ -87,24 +88,23 @@
             <div class="triangle top"></div>
 
             <!-- Main slider area -->
-            <div class="inner">
-                <div class="slide">
+            <div class="inner" id="inner">
+                <div class="slide" id="slide1">
                     <div class="inner-slide">
                         <div class="slide-desc">
-                            <h1>LOREM IPSUM DOLOR</h1>
+                            <h1 >LOREM IPSUM DOLOR</h1>
                             <span class="sub-title">
                                 <span class="sub-title-line">&nbsp;</span>
                                 <h2>orci es eget</h2>
                                 <span class="sub-title-line">&nbsp;</span>
                                 <div class="clear"></div>
                             </span>
-                            <h1>Tempus Risus</h1>
+                            <p></p>
                         </div>
-                        <!-- Image width and height automatically adjust depends on window width in js/slider.js -->
                         <img src="img/slider/1.jpg" width="1980" height="1040">
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" id="slide2">
                     <div class="inner-slide">
                         <div class="slide-desc">
                             <h1>LOREM IPSUM DOLOR</h1>
@@ -114,12 +114,12 @@
                                 <span class="sub-title-line">&nbsp;</span>
                                 <div class="clear"></div>
                             </span>
-                            <h1>Tempus Risus</h1>
+                            <p></p>
                         </div>
-                        <img src="img/slider/2.jpg" width="1980" height="1040">
+                        <img src="img/slider/1.jpg" width="1980" height="1040">
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" id="slide3">
                     <div class="inner-slide">
                         <div class="slide-desc">
                             <h1>LOREM IPSUM DOLOR</h1>
@@ -129,9 +129,9 @@
                                 <span class="sub-title-line">&nbsp;</span>
                                 <div class="clear"></div>
                             </span>
-                            <h1>Tempus Risus</h1>
+                            <p></p>
                         </div>
-                        <img src="img/slider/3.jpg" width="1980" height="1040">
+                        <img src="img/slider/1.jpg" width="1980" height="1040">
                     </div>
                 </div>
             </div>
@@ -150,33 +150,6 @@
         </div>
         
         <!-- Clear used in everypage to fix float problem -->
-        <div class="clear"></div>
-
-        <!-- Container for featured content -->
-        <div class="container">
-            <div id="featured" class="main-container">
-                <div class="row">
-                    <div class="featured-left col">
-                        <div class="title">
-                            <h1>Lorem ipsum dolor</h1>
-                            <h2 class="sub-title">dolor sit amet</h2>
-                        </div>
-                        <div class="content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                        </div>
-                        <div class="button-container">
-                            <a class="button grey-button">Read More</a>
-                        </div>
-                    </div>
-                    <div class="featured-right col">
-                        <div class="featured-image">
-                            <img src="img/featured/1.jpg"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="clear"></div>
 
         <div class="triangle top promotion"></div>
@@ -200,44 +173,7 @@
                 <div class="clear"></div>
 
                 <ul id="promotion-product" class="row">
-                    <li class="product col">
-                        <div class="promotion-product-container">
-                            <!-- Four dot in promotion box, also used in contact address box in contact page -->
-                            <span class="dot dot-left-top">&nbsp;</span><span class="dot dot-right-top">&nbsp;</span><span class="dot dot-left-bottom">&nbsp;</span><span class="dot dot-right-bottom">&nbsp;</span>
-                            
-                            <!-- Main image for promotion content -->
-                            <div class="promotion-product-image"><a href="#"><img src="img/promotion/1.jpg"/></a></div>
-                            <div class="promotion-product-desc">
-                                <div class="promotion-product-title"><h4><a href="#">Hamburger &amp; chips</a></h4></div>
-                                <div class="promotion-product-content content"><p>Ultricies lacinia non ultricies eget libero vestibulum ultrices.</p></div>
-                            </div>
-                            <div class="price-tag"><span class="price">$5.99</span></div>
-                        </div>
-                    </li>
-                    <li class="product col">
-                        <div class="promotion-product-container">
-                            <div class="promotion-product-container">
-                            <span class="dot dot-left-top">&nbsp;</span><span class="dot dot-right-top">&nbsp;</span><span class="dot dot-left-bottom">&nbsp;</span><span class="dot dot-right-bottom">&nbsp;</span>
-                            <div class="promotion-product-image"><a href="#"><img src="img/promotion/2.jpg" /></a></div>
-                            <div class="promotion-product-desc">
-                                <div class="promotion-product-title"><h4><a href="#">Delicious sandwich</a></h4></div>
-                                <div class="promotion-product-content content"><p>Donec rhoncus odio vitae lacus iaculis viverra sed id lacus.</p></div>
-                            </div>
-                            <div class="price-tag"><span class="price">$6.99</span></div>
-                        </div>
-                    </li>
-                    <li class="product col">
-                        <div class="promotion-product-container">
-                            <span class="dot dot-left-top">&nbsp;</span><span class="dot dot-right-top">&nbsp;</span><span class="dot dot-left-bottom">&nbsp;</span><span class="dot dot-right-bottom">&nbsp;</span>
-                            <div class="promotion-product-image"><a href="#"><img src="img/promotion/3.jpg" /></a></div>
-                            <div class="promotion-product-desc">
-                                <div class="promotion-product-title"><h4><a href="#">Two burgers for one</a></h4></div>
-                                <div class="promotion-product-content content"><p>Donec rhoncus odio vitae lacus iaculis viverra sed id lacus.</p></div>
-                            </div>
-                            <div class="price-tag"><span class="price">$3.99</span></div>
-                        </div>
-                    </li>
-                    <div class="clear"></div>
+                    
                 </ul>
             </div>
 
@@ -318,7 +254,7 @@
                             <div class="logo-icon"><img src="img/footer-logo.png" /></div>
                         </div>
                         <div class="footer-address">
-                            Company name</br>523 Avenue Street, New York
+                            Cheff Burger</br>523 Avenue Street, New York
                         </div>
                         <div class="footer-contact">
                             (432) 421 693 812<br/><a href="#">office@companyname.com</a>
@@ -337,7 +273,7 @@
 
                 <div class="footer-bottom row">
                     <div class="footer-copyright col">
-                        <div class="footer-copyright-text">Copyright 2014 Company name. Designed by Themezy. All rights reserved.</div>
+                        <div class="footer-copyright-text">Copyright 2014 Cheff Burger. Designed by Themezy. All rights reserved.</div>
                     </div>
                     <div class="footer-social-media col">
                         <div class="social-media-icon">
@@ -352,7 +288,6 @@
             </div>
             <div class="clear"></div>
         </div>
-       
     </div>
 
 
@@ -371,14 +306,43 @@
             accessToken: "PFFeCp8l2C15CYV_uqTBFt1R1EkxVFJY9j2dPqpK_u4"
         });
 
-        console.log('hasta aqui, todo bien');
+        // console.log('hasta aqui, todo bien');
 
-        const response = await client.getEntries({
+        const promociones = await client.getEntries({
             'content_type': 'platos',
             'fields.promociones[exists]': true //Trae platos en promoción
         });
-        console.log(response.items)
+        const sinPromociones = await client.getEntries({
+            'content_type': 'platos',
+            'fields.promociones[exists]': false //Trae platos sin promoción
+        });
+        const principales = await client.getEntries({
+            'content_type': 'platos',
+            'fields.principal': true //Trae platos sin promoción
+        });
 
-        $('.card-title').text('hola bebé');
+        console.log('********************* PROMOCIONES ****************************')
+        console.log(promociones.items)
+        console.log('********************* SIN PROMOCIONES ****************************')
+        console.log(sinPromociones.items)
+        console.log('********************* PRINCIPALES ****************************')
+        console.log(principales.items)
+
+        $(document).ready(function(){
+            $(principales.items).each(function(index){
+                console.log(this)
+                console.log(this.fields.nombre)
+                $('#slide'+(index+1)).find('h1').text(this.fields.nombre)
+                $('#slide'+(index+1)).find('h2').text(this.fields.apodo)
+                $('#slide'+(index+1)).find('p').text(this.fields.descripcion)
+                $('#slide'+(index+1)).find('img').attr("src", this.fields.bgImage.fields.file.url)
+            });
+            
+            $(promociones.items).each(function(index){
+                $('#promotion-product').append('<li class="product col"><div class="promotion-product-container"><span class="dot dot-left-top">&nbsp;</span><span class="dot dot-right-top">&nbsp;</span><spanclass="dot dot-left-bottom">&nbsp;</span><span class="dot dot-right-bottom">&nbsp;</span><div class="promotion-product-image"><a href="#"><img src="'+this.fields.imagen.fields.file.url+'"/></a></div><div class="promotion-product-desc"><div class="promotion-product-title"><h4><a href="#">'+this.fields.nombre+'</a></h4></div><div class="promotion-product-content content"><p>'+this.fields.descripcion+'</p></div></div><div class="price-tag"><span class="price">'+'$ '+this.fields.precio+'</span></div></div></li>');
+            });
+        });
+
+            $('#promotion-product').append('<div class="clear"></div>');
     </script>
 </body>
