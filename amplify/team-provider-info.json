@@ -1,0 +1,20 @@
+{
+  "production": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cheffburguerproducts-production-192621-authRole",
+      "UnauthRoleArn": "arn:aws:iam::595750861549:role/amplify-cheffburguerproducts-production-192621-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::595750861549:role/amplify-cheffburguerproducts-production-192621-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cheffburguerproducts-production-192621-deployment",
+      "UnauthRoleName": "amplify-cheffburguerproducts-production-192621-unauthRole",
+      "StackName": "amplify-cheffburguerproducts-production-192621",
+      "StackId": "arn:aws:cloudformation:us-east-1:595750861549:stack/amplify-cheffburguerproducts-production-192621/ed658860-fb03-11eb-a8d9-1206176d6be9",
+      "AmplifyAppId": "d1elky2rnd11je"
+    },
+    "categories": {
+      "auth": {
+        "cheffburguerproducts93f49fd1": {}
+      }
+    }
+  }
+}
