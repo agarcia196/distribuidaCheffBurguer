@@ -1,43 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Web site created using create-react-app">
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png">
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,800,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+  <title>Cheff Burger</title>
+  <meta name="author" content="Cheff Burger">
+  <meta name="description" content="Cheff Burger Description">
+  <meta name="keywords" content="Cheff Burger Keyword">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+  <link rel="stylesheet/less" type="text/css" href="/css/style.less">
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <script>
+    less = {
+      env: "development",
+      async: false,
+      fileAsync: false,
+      poll: 1000,
+      functions: {},
+      dumpLineNumbers: "comments",
+      relativeUrls: false
+    };
+</script> 
+<script type="text/javascript" src="%PUBLIC_URL%/js/less.min.js"></script> 
+<script type="text/javascript" src="%PUBLIC_URL%/js/retina.min.js"></script> 
+<script type="text/javascript" src="%PUBLIC_URL%/js/modernizr.custom.71422.js"></script> 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+</head>
+<body>
+  <div id="body"></div>
+  
+  <script type="text/javascript" src="/js/jquery.min.js"></script> 
+  <script type="text/javascript" src="/js/pushy.js"></script> 
+  <script type="text/javascript" src="/js/slider.js"></script> 
+  <script type="text/javascript" src="/js/fastclick.js"></script> 
+  <script type="text/javascript" src="/js/script.js"></script> 
+  <script type="module">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+
+      import 'https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js'
+      const client = contentful.createClient({
+          // This is the space ID. A space is like a project folder in Contentful terms
+          space: "b4e4el8wajm5",
+          // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+          accessToken: "PFFeCp8l2C15CYV_uqTBFt1R1EkxVFJY9j2dPqpK_u4"
+      });
+
+      // console.log('hasta aqui, todo bien');
+
+      const promociones = await client.getEntries({
+          'content_type': 'platos',
+          'fields.promociones[exists]': true //Trae platos en promoción
+      });
+      const sinPromociones = await client.getEntries({
+          'content_type': 'platos',
+          'fields.promociones[exists]': false //Trae platos sin promoción
+      });
+      const principales = await client.getEntries({
+          'content_type': 'platos',
+          'fields.principal': true //Trae platos sin promoción
+      });
+
+      console.log('********************* PROMOCIONES ****************************')
+      console.log(promociones.items)
+      console.log('********************* SIN PROMOCIONES ****************************')
+      console.log(sinPromociones.items)
+      console.log('********************* PRINCIPALES ****************************')
+      console.log(principales.items)
+
+      $(document).ready(function(){
+          /*$(principales.items).each(function(index){
+              console.log(this)
+              console.log(this.fields.nombre)
+              $('#slide'+(index+1)).find('h1').text(this.fields.nombre)
+              $('#slide'+(index+1)).find('h2').text(this.fields.apodo)
+              $('#slide'+(index+1)).find('p').text(this.fields.descripcion)
+              $('#slide'+(index+1)).find('img').attr("src", this.fields.bgImage.fields.file.url)
+          });*/
+          
+          $(promociones.items).each(function(index){
+              $('#promotion-product').append('<li class="product col"><div class="promotion-product-container"><span class="dot dot-left-top">&nbsp;</span><span class="dot dot-right-top">&nbsp;</span><spanclass="dot dot-left-bottom">&nbsp;</span><span class="dot dot-right-bottom">&nbsp;</span><div class="promotion-product-image"><a href="#"><img src="'+this.fields.imagen.fields.file.url+'"/></a></div><div class="promotion-product-desc"><div class="promotion-product-title"><h4><a href="#">'+this.fields.nombre+'</a></h4></div><div class="promotion-product-content content"><p>'+this.fields.descripcion+'</p></div></div><div class="price-tag"><span class="price">'+'$ '+this.fields.precio+'</span></div></div></li>');
+          });
+      });
+
+          $('#promotion-product').append('<div class="clear"></div>');
+  </script>
+</body>
 </html>
