@@ -80,12 +80,14 @@ export default function App() {
         </header>
         {/* Section*/}
 
-        <Route path="/" exact component={home} />        
+        <Route path="/" exact component={home} />
         <Route path="/about" component={about} />
         <Route path="/contact" component={contact} />
         <Route path="/cart" component={cart} />
-        <Route path="/menu" >
-          {user ? <Redirect to="/menu" /> : Auth.federatedSignIn()}
+        <Route exact path="/menu" >
+          {user ?
+            <Route component={menu} /> :
+            <Redirect to="/" />}
         </Route>
         {/* Footer*/}
         <footer className="py-5 bg-dark">
