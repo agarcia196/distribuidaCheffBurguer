@@ -1,0 +1,20 @@
+{
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cheffburgerproducts-prod-123221-authRole",
+      "UnauthRoleArn": "arn:aws:iam::595750861549:role/amplify-cheffburgerproducts-prod-123221-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::595750861549:role/amplify-cheffburgerproducts-prod-123221-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cheffburgerproducts-prod-123221-deployment",
+      "UnauthRoleName": "amplify-cheffburgerproducts-prod-123221-unauthRole",
+      "StackName": "amplify-cheffburgerproducts-prod-123221",
+      "StackId": "arn:aws:cloudformation:us-east-1:595750861549:stack/amplify-cheffburgerproducts-prod-123221/41d78620-fb93-11eb-9616-120f6581d383",
+      "AmplifyAppId": "d23d5nnl0a6zs0"
+    },
+    "categories": {
+      "auth": {
+        "cheffburgerproductscaf9106a": {}
+      }
+    }
+  }
+}
