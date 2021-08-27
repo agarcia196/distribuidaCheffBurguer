@@ -1,6 +1,12 @@
 {
+  "hosting": {
+    "S3AndCloudFront": {
+      "service": "S3AndCloudFront",
+      "providerPlugin": "awscloudformation"
+    }
+  },
   "auth": {
-    "cheffburgerproductscaf9106a": {
+    "cheffburgerapp0f67dba9": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -21,12 +27,6 @@
           "SMS"
         ]
       }
-    }
-  },
-  "hosting": {
-    "S3AndCloudFront": {
-      "service": "S3AndCloudFront",
-      "providerPlugin": "awscloudformation"
     }
   }
 }

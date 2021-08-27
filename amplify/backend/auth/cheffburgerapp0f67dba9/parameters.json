@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "cheffburgerproductscaf9106a_identitypool_caf9106a",
+    "identityPoolName": "cheffburgerapp0f67dba9_identitypool_0f67dba9",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "cheffbcaf9106a",
-    "userPoolName": "cheffburgerproductscaf9106a_userpool_caf9106a",
+    "resourceNameTruncated": "cheffb0f67dba9",
+    "userPoolName": "cheffburgerapp0f67dba9_userpool_0f67dba9",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -25,12 +25,16 @@
     ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
-    "userpoolClientWriteAttributes": [],
-    "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "cheffbcaf9106a_userpoolclient_lambda_role",
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "userpoolClientLambdaRole": "cheffb0f67dba9_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "caf9106a",
-    "resourceName": "cheffburgerproductscaf9106a",
+    "sharedId": "0f67dba9",
+    "resourceName": "cheffburgerapp0f67dba9",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -44,21 +48,17 @@
             "Arn"
         ]
     },
-    "useDefault": "manual",
-    "userPoolGroupList": [],
-    "serviceName": "Cognito",
-    "usernameCaseSensitive": false,
-    "dependsOn": [],
+    "useDefault": "defaultSocial",
     "hostedUI": true,
-    "hostedUIDomainName": "cheffburgerproducts4c37dc33-4c37dc33",
+    "hostedUIDomainName": "cheffburgerapp0f67dba9-0f67dba9",
     "authProvidersUserPool": [
         "Facebook",
         "Google"
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\",\"https://d1fma4pt2lgxkw.cloudfront.net\"],\"LogoutURLs\":[\"http://localhost:3000/\",\"https://d1fma4pt2lgxkw.cloudfront.net\"]}",
-    "authProviders": [],
-    "userPoolGroups": false,
-    "adminQueries": false,
-    "thirdPartyAuth": false
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://d2jwolqm1oal4b.cloudfront.net/\"],\"LogoutURLs\":[\"https://d2jwolqm1oal4b.cloudfront.net/\"]}",
+    "userPoolGroupList": [],
+    "serviceName": "Cognito",
+    "usernameCaseSensitive": false,
+    "dependsOn": []
 }

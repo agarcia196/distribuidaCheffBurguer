@@ -81,14 +81,11 @@ export default function App() {
         {/* Section*/}
 
         <Route path="/" exact component={home} />
+        <Route exact path="/menu" component={menu}/>
         <Route path="/about" component={about} />
         <Route path="/contact" component={contact} />
         <Route path="/cart" component={cart} />
-        <Route exact path="/menu" >
-          {user ?
-            <Route component={menu} /> :
-            <Redirect to="/" />}
-        </Route>
+    
         {/* Footer*/}
         <footer className="py-5 bg-dark">
           <div className="container"><p className="m-0 text-center text-white">Copyright ©CheffBurger 2021</p></div>
