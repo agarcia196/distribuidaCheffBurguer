@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Amplify, { Auth, Hub } from 'aws-amplify';
+import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 import awsconfig from './aws-exports';
 
 import {
@@ -42,34 +43,26 @@ export default function App() {
   return (
     <Router>
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="container px-4 px-lg-5">
-            <a className="navbar-brand" href="/">Inicio</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon" /></button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                {user ? (
-                  <li className="nav-item"><a className="nav-link active" aria-current="page" href="/menu">Menú</a></li>
-                ) : null}
-                <li className="nav-item"><a className="nav-link" href="/about">Nosotros</a></li>
-                <li className="nav-item"><a className="nav-link" href="/contact">Contacto</a></li>
-              </ul>
-              <div className="d-flex">
-                {user ? (
-                  <div className="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      {user ? user.attributes.email : 'None'}
-                    </button>
-                    <button className="nav-link btn btn-outline-dark text-black" onClick={() => Auth.signOut()}>  Sign Out <i className="bi bi-box-arrow-right me-1 text-black" /></button>
-                  </div>
-                ) : (
-                  <button className="nav-link btn btn-outline-dark text-black" onClick={() => Auth.federatedSignIn()}> <i className="bi bi-person-fill me-1 text-black" /> Sign In</button>
-                )}
-              </div>
-            </div>
-          </div>
-        </nav>
-        {/* Header*/}
+      <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">Cheff Burger</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+
         <header className="bg-dark py-5">
           <div className="container px-4 px-lg-5 my-5">
             <div className="text-center text-white">
