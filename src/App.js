@@ -49,8 +49,9 @@ export default function App() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/buy_ingredients">Buy Ingredients</Nav.Link>
+            <Nav.Link href="/menu">Menu</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -78,6 +79,7 @@ export default function App() {
         <Route path="/about" component={about} />
         <Route path="/contact" component={contact} />
         <Route path="/cart" component={cart} />
+        <Route path="/buy_ingredients" component={buy_ingredients} />
     
         {/* Footer*/}
         <footer className="py-5 bg-dark">
@@ -427,4 +429,195 @@ const cart = () => (
       <h2 className="text-center">Esta funcionalidad pronto estará disponible!</h2>
     </div>
   </div>
+);
+
+const buy_ingredients = () => (
+  <div className="container px-4 px-lg-5 mt-5">
+  <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    <div className="col mb-5">
+      <div id="ingredients1" className="card h-100">
+        {/* Product image*/}
+        <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+        {/* Product details*/}
+        <div className="card-body p-4">
+
+          <div id="menu1" className="text-center">
+            <h2></h2>
+            {/* Product name*/}
+            <h5 text="" className="fw-bolder"></h5>
+            <div className="d-flex justify-content-center small text-warning mb-2">
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+            </div>
+            <p></p>
+            {/* Product price*/}
+            <p id="precio"></p>
+          </div>
+        </div>
+        {/* Product actions*/}
+        <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Agregar al carrito</a></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div className="col mb-5">
+      <div id="ingredients2" className="card h-100">
+        {/* Product image*/}
+        <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+        {/* Product details*/}
+        <div className="card-body p-4">
+
+          <div id="menu2" className="text-center">
+            <h2></h2>
+            {/* Product name*/}
+            <h5 text="" className="fw-bolder"></h5>
+            <div className="d-flex justify-content-center small text-warning mb-2">
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+            </div>
+            <p></p>
+            {/* Product price*/}
+            <p id="precio"></p>
+          </div>
+        </div>
+        {/* Product actions*/}
+        <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Agregar al carrito</a></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div className="col mb-5">
+      <div id="ingredients3" className="card h-100">
+        {/* Product image*/}
+        <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+        {/* Product details*/}
+        <div className="card-body p-4">
+
+          <div id="menu3" className="text-center">
+            <h2></h2>
+            {/* Product name*/}
+            <h5 text="" className="fw-bolder"></h5>
+            <div className="d-flex justify-content-center small text-warning mb-2">
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+            </div>
+            <p></p>
+            {/* Product price*/}
+            <p id="precio"></p>
+          </div>
+        </div>
+        {/* Product actions*/}
+        <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Agregar al carrito</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    <div className="col mb-5">
+      <div id="ingredients4" className="card h-100">
+        {/* Product image*/}
+        <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+        {/* Product details*/}
+        <div className="card-body p-4">
+
+          <div id="menu4" className="text-center">
+            <h2></h2>
+            {/* Product name*/}
+            <h5 text="" className="fw-bolder"></h5>
+            <div className="d-flex justify-content-center small text-warning mb-2">
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+            </div>
+            <p></p>
+            {/* Product price*/}
+            <p id="precio"></p>
+          </div>
+        </div>
+        {/* Product actions*/}
+        <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Agregar al carrito</a></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div className="col mb-5">
+      <div id="ingredients5" className="card h-100">
+        {/* Product image*/}
+        <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+        {/* Product details*/}
+        <div className="card-body p-4">
+
+          <div id="menu5" className="text-center">
+            <h2></h2>
+            {/* Product name*/}
+            <h5 text="" className="fw-bolder"></h5>
+            <div className="d-flex justify-content-center small text-warning mb-2">
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+            </div>
+            <p></p>
+            {/* Product price*/}
+            <p id="precio"></p>
+          </div>
+        </div>
+        {/* Product actions*/}
+        <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Agregar al carrito</a></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div className="col mb-5">
+      <div id="ingredients6" className="card h-100">
+        {/* Product image*/}
+        <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+        {/* Product details*/}
+        <div className="card-body p-4">
+
+          <div id="menu6" className="text-center">
+            <h2></h2>
+            {/* Product name*/}
+            <h5 text="" className="fw-bolder"></h5>
+            <div className="d-flex justify-content-center small text-warning mb-2">
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+              <div className="bi-star-fill" />
+            </div>
+            <p></p>
+            {/* Product price*/}
+            <p id="precio"></p>
+          </div>
+        </div>
+        {/* Product actions*/}
+        <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Agregar al carrito</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 );
