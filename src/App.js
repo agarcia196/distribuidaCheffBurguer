@@ -487,13 +487,23 @@ function Cart() {
   const sellingProducts = [
     {
       product_id: 1,
-      name: "La Elastica",
-      price: 100000,
+      name: "Clasica",
+      price: 50000,
     },
     {
       product_id: 2,
+      name: "Cheese Burger",
+      price: 60000,
+    },
+    {
+      product_id: 3,
       name: "La Tapa Arterias",
       price: 150000,
+    },
+    {
+      product_id: 4,
+      name: "Bacon Burger",
+      price: 130000,
     },
   ];
   const [products, setProducts] = useState([]);
