@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Amplify, { Auth, Hub } from 'aws-amplify';
-import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
+import {Container, Nav, Navbar, NavDropdown, Form, Button} from 'react-bootstrap';
 import awsconfig from './aws-exports';
 
 import {
@@ -211,74 +211,6 @@ const about = () => (
 
 const menu = () => (
   <div className="container px-4 px-lg-5 mt-5">
-    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-      <div className="col mb-5">
-        <div className="card h-100 ingredient">
-          {/* Product image*/}
-          <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-          {/* Product details*/}
-          <div className="card-body p-4">
-
-            <div id="menu1" className="text-center">
-              <h2></h2>
-              {/* Product name*/}
-              <h5 text="" className="fw-bolder"></h5>
-              <div className="d-flex justify-content-center small text-warning mb-2">
-                <div className="bi-star-fill" />
-                <div className="bi-star-fill" />
-                <div className="bi-star-fill" />
-                <div className="bi-star-fill" />
-                <div className="bi-star-fill" />
-              </div>
-              <p></p>
-              {/* Product price*/}
-              <p id="precio"></p>
-            </div>
-          </div>
-          {/* Product actions*/}
-          <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Agregar al carrito</a></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-);
-
-const contact = () => (
-  <div className="container px-4 px-lg-5 mt-5">
-    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5">
-      <h1 className="text-center">Información de Contacto</h1>
-    </div>
-    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5 mt-5">
-      <h2 className="text-center">Fabio García : 301243124</h2>
-    </div>
-    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5 mt-5">
-      <h2 className="text-center">Andrés Barrera : 301243125</h2>
-    </div>
-    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5 mt-5">
-      <h2 className="text-center">Jeisson Anaya : 301243126</h2>
-    </div>
-    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5 mt-5">
-      <h2 className="text-center">Alexis Vélez : 301243122</h2>
-    </div>
-  </div>
-);
-
-const cart = () => (
-  <div className="container px-4 px-lg-5 mt-5">
-    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5">
-      <h1 className="text-center">Tu Carrito</h1>
-    </div>
-    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-2 justify-content-center mb-5 mt-5">
-      <h2 className="text-center">Esta funcionalidad pronto estará disponible!</h2>
-    </div>
-  </div>
-);
-
-const buy_ingredients = () => (
-  <div className="container px-4 px-lg-5 mt-5">
   <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
     <div className="col mb-5">
       <div id="ingredients1" className="card h-100">
@@ -466,4 +398,71 @@ const buy_ingredients = () => (
     </div>
   </div>
 </div>
+);
+
+const contact = () => (
+  <div className="container px-4 px-lg-5 mt-5">
+    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5">
+      <h1 className="text-center">Información de Contacto</h1>
+    </div>
+    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5 mt-5">
+      <h2 className="text-center">Fabio García : 301243124</h2>
+    </div>
+    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5 mt-5">
+      <h2 className="text-center">Andrés Barrera : 301243125</h2>
+    </div>
+    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5 mt-5">
+      <h2 className="text-center">Jeisson Anaya : 301243126</h2>
+    </div>
+    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5 mt-5">
+      <h2 className="text-center">Alexis Vélez : 301243122</h2>
+    </div>
+  </div>
+);
+
+const cart = () => (
+  <div className="container px-4 px-lg-5 mt-5">
+    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-5">
+      <h1 className="text-center">Tu Carrito</h1>
+    </div>
+    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-2 justify-content-center mb-5 mt-5">
+      <h2 className="text-center">Esta funcionalidad pronto estará disponible!</h2>
+    </div>
+  </div>
+);
+
+const buy_ingredients = () => (
+  <div className="container">
+    <Form>
+      <Form.Group className="mb-3 ingredient1" controlId="formBasicCheckbox">
+        <div className="d-flex">
+          <Form.Check type="checkbox" label="Tomate"/>
+          <span className="price1"></span>
+          <span>.   Cantidad</span>
+          <input type="number" id="count1"></input>
+        </div>
+      </Form.Group>
+
+      <Form.Group className="mb-3 ingredient2" controlId="formBasicCheckbox2">
+        <div className="d-flex">
+          <Form.Check type="checkbox" label="Cebolla"/>
+          <span className="price2"></span>
+          <span>.   Cantidad</span>
+          <input type="number" id="count2"></input>
+        </div>
+      </Form.Group>
+
+      <Form.Group className="mb-3 ingredient3" controlId="formBasicCheckbox3">
+        <div className="d-flex">
+          <Form.Check type="checkbox" label="Lechuga"/>
+          <span className="price3"></span>
+          <span>.   Cantidad</span>
+          <input type="number" id="count3"></input>
+        </div>
+      </Form.Group>
+      <Button variant="primary" type="submit" id="pedir">
+        Pedir
+      </Button>
+    </Form>
+  </div>
 );
