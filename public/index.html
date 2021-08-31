@@ -73,19 +73,21 @@
           'content_type': 'platos'
       });
 
+      // ---------------------------- Para la compra de ingredientes ---------------------------------------------
+
       console.log('********************* PROMOCIONES ****************************')
-      console.log(promociones.items)
+    //   console.log(promociones.items)
       console.log('********************* SIN PROMOCIONES ****************************')
-      console.log(sinPromociones.items)
+    //   console.log(sinPromociones.items)
       console.log('********************* PRINCIPALES ****************************')
-      console.log(principales.items)
+    //   console.log(principales.items)
       console.log('********************* TODAS ****************************')
-      console.log(todas.items)
+    //   console.log(todas.items)
 
       $(document).ready(function(){
           $(principales.items).each(function(index){
-              console.log(this)
-              console.log(this.fields.nombre)
+            //   console.log(this)
+            //   console.log(this.fields.nombre)
               $('#slide'+(index+1)).find('h5').text(this.fields.nombre)
               $('#slide'+(index+1)).find('h2').text(this.fields.apodo)
               $('#slide'+(index+1)).find('p').text(this.fields.descripcion)
@@ -100,8 +102,8 @@
 
       $(document).ready(function(){
           $(todas.items).each(function(index){
-              console.log(this)
-              console.log(this.fields.nombre)
+            //   console.log(this)
+            //   console.log(this.fields.nombre)
               $('#menu'+(index+1)).find('h5').text(this.fields.nombre)
               $('#menu'+(index+1)).find('h2').text(this.fields.apodo)
               $('#menu'+(index+1)).find('p').text(this.fields.descripcion)
@@ -113,7 +115,73 @@
               $('#promotion-product').append('<li class="product col"><div class="promotion-product-container"><span class="dot dot-left-top">&nbsp;</span><span class="dot dot-right-top">&nbsp;</span><spanclass="dot dot-left-bottom">&nbsp;</span><span class="dot dot-right-bottom">&nbsp;</span><div class="promotion-product-image"><a href="#"><img src="'+this.fields.imagen.fields.file.url+'"/></a></div><div class="promotion-product-desc"><div class="promotion-product-title"><h4><a href="#">'+this.fields.nombre+'</a></h4></div><div class="promotion-product-content content"><p>'+this.fields.descripcion+'</p></div></div><div class="price-tag"><span class="price">'+'$ '+this.fields.precio+'</span></div></div></li>');
           });
       });
-  </script>
+
+
+    // COMPAR INGREDIENTES
+    $(document).ready(function(){
+        var settings = {
+            "url": "https://emb7kyskoh.execute-api.us-east-1.amazonaws.com/dev/ingredients",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "x-api-key": "latienditamela.com1423"
+            },
+        };
+
+        $.ajax(settings).done(function (response) {
+            // console.log(response);
+            for(let i = 0; i < response.length; i++){
+                // console.log(response[i]);
+                $('.price'+(i+1)).text('('+response[i].price+')');
+            }
+        });
+
+        $('#pedir').click(function(event){
+            event.preventDefault();
+            
+            let ingredientes = new Array();
+            let jsonTem;
+
+            if($('#formBasicCheckbox').is(':checked')){
+                // console.log('chuleado')
+                jsonTem = {id: 1, count: $('#count'+1).val(), sell_price: ''};
+                ingredientes.push(jsonTem);
+            }
+            if($('#formBasicCheckbox2').is(':checked')){
+                // console.log('chuleado2')
+                jsonTem = {id: 2, count: $('#count'+2).val(), sell_price: ''};
+                ingredientes.push(jsonTem);
+            }
+            if($('#formBasicCheckbox3').is(':checked')){
+                console.log('chuleado3')
+                jsonTem = {id: 3, count: $('#count'+3).val(), sell_price: ''};
+                ingredientes.push(jsonTem);
+            }
+            let json = {
+                ingredients: ingredientes
+            };
+            console.log(json)
+
+            var ajax = {
+                "url": "https://emb7kyskoh.execute-api.us-east-1.amazonaws.com/dev/wishes",
+                "method": "POST",
+                "timeout": 0,
+                "data": JSON.stringify(json),
+                "headers": {
+                    "x-api-key": "latienditamela.com1423"
+                },
+            };
+            console.log('*********************************************')
+            console.log(ajax)
+
+            $.ajax(ajax).done(function (response) {
+                alert('Se hizo su pedido exitosamente, en unos días se lo llevamos');
+            });
+
+        });
+
+    });
+</script>
 </body>
 
 </html>
